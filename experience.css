@@ -42,3 +42,10 @@
  .ast-music-toggle{left:18px!important;bottom:18px!important;width:28px!important;height:30px!important;font-size:21px!important}
 }
 @media(prefers-reduced-motion:reduce){.memory-slideshow .memory-slide,.ast-open-screen{transition:none!important;transform:none!important}.ast-music-toggle.is-playing{animation:none!important}}
+
+/* Custom AST monogram integration */
+.monogram-link{display:flex!important;align-items:center!important;justify-content:flex-start!important;width:54px!important;height:42px!important}
+.monogram-link img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 1px 4px rgba(0,0,0,.18))}
+footer .monogram-link{width:62px!important;height:48px!important}
+.closing-monogram{display:block;width:clamp(76px,16vw,118px);height:auto;max-height:100px;object-fit:contain;margin:0 auto 24px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.16))}
+@media(max-width:700px){.monogram-link{width:48px!important;height:38px!important}.closing-monogram{width:82px;margin-bottom:20px}}
