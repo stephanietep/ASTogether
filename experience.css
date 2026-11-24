@@ -51,19 +51,19 @@ footer .monogram-link{width:62px!important;height:48px!important}
 @media(max-width:700px){.monogram-link{width:48px!important;height:38px!important}.closing-monogram{width:82px;margin-bottom:20px}}
 
 
-/* Fine-tuned framing for the two photos shown in the latest screenshots */
-.memory-slideshow .memory-slide:nth-child(1) {
-  background-position: 20% 40% !important;
+/* Corrected individual framing: label is the first div, then slide layers follow */
+.memory-slideshow .memory-slide:nth-of-type(2) {
+  background-position: 0% 40% !important;
 }
-.memory-slideshow .memory-slide:nth-child(6) {
-  background-position: 35% 40% !important;
+.memory-slideshow .memory-slide:nth-of-type(7) {
+  background-position: 10% 40% !important;
 }
 
 @media (max-width: 700px) {
-  .memory-slideshow .memory-slide:nth-child(1) {
-    background-position: 20% 40% !important;
+  .memory-slideshow .memory-slide:nth-of-type(2) {
+    background-position: 0% 40% !important;
   }
-  .memory-slideshow .memory-slide:nth-child(6) {
-    background-position: 35% 40% !important;
+  .memory-slideshow .memory-slide:nth-of-type(7) {
+    background-position: 10% 40% !important;
   }
 }
