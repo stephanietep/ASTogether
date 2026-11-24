@@ -51,19 +51,33 @@ footer .monogram-link{width:62px!important;height:48px!important}
 @media(max-width:700px){.monogram-link{width:48px!important;height:38px!important}.closing-monogram{width:82px;margin-bottom:20px}}
 
 
-/* Balanced framing for slideshow photos 1 and 6 */
-.memory-slideshow .memory-slide:nth-of-type(2) {
-  background-position: 18% 40% !important;
+/* Page 02: complete names and parent details */
+.couple-feature-caption{text-align:center!important}
+.couple-feature-caption .eyebrow{text-align:center!important}
+.couple-feature-caption h2.couple-full-names{
+  display:flex!important;flex-direction:column!important;align-items:center!important;
+  justify-content:center!important;gap:0!important;
+  width:100%!important;margin:12px auto 30px!important;
+  font-family:'Cormorant Garamond',Georgia,serif!important;
+  font-size:clamp(19px,2.65vw,34px)!important;
+  line-height:1.08!important;letter-spacing:-.025em!important;
+  font-weight:400!important;text-align:center!important;
 }
-.memory-slideshow .memory-slide:nth-of-type(7) {
-  background-position: 28% 40% !important;
+.couple-full-names span{display:block!important;white-space:nowrap!important;max-width:100%!important}
+.couple-full-names i{display:block!important;color:#b79a62!important;font-size:.9em!important;line-height:1.05!important;font-style:italic!important;margin:2px 0!important}
+.couple-parents{grid-template-columns:1fr!important;gap:20px!important;text-align:center!important}
+.couple-parents p{font-size:12px!important;line-height:1.7!important}
+.couple-parents span{margin-bottom:7px!important}
+.couple-parents b{font-weight:500!important}
+@media(max-width:700px){
+  .couple-feature-caption{padding:30px 18px 36px!important}
+  .couple-feature-caption h2.couple-full-names{
+    font-size:clamp(19px,5.7vw,25px)!important;
+    line-height:1.12!important;margin:12px auto 25px!important;
+  }
+  .couple-parents{grid-template-columns:1fr!important;gap:20px!important}
+  .couple-parents p{font-size:12px!important}
 }
-
-@media (max-width: 700px) {
-  .memory-slideshow .memory-slide:nth-of-type(2) {
-    background-position: 18% 40% !important;
-  }
-  .memory-slideshow .memory-slide:nth-of-type(7) {
-    background-position: 28% 40% !important;
-  }
+@media(max-width:350px){
+  .couple-feature-caption h2.couple-full-names{font-size:18px!important}
 }
