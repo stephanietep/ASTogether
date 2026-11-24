@@ -17,6 +17,7 @@
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Wedding of Andy & Stephanie')}&dates=${dates(c.ceremonyDateTime)}/${dates(c.ceremonyEndDateTime)}&details=${encodeURIComponent('With grateful hearts, Andy Surya & Stephanie Vanessa invite you to celebrate their wedding. #ASTogether')}&location=${encodeURIComponent(c.churchName+', '+c.churchAddress)}`;
   };
   $('#calendarLink').href=toCal();
+  $('#countdownCalendarLink').href=toCal();
   const target = c.ceremonyDateTime ? new Date(c.ceremonyDateTime).getTime() : new Date(c.date+'T00:00:00+07:00').getTime();
   const pad = n => String(n).padStart(2,'0');
   function tick(){let d=Math.max(0,target-Date.now()); const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);const s=Math.floor(d/1000)%60;$('#days').textContent=String(days).padStart(3,'0');$('#hours').textContent=pad(h);$('#minutes').textContent=pad(m);$('#seconds').textContent=pad(s);}

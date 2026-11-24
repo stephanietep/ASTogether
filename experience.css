@@ -89,3 +89,27 @@ footer .monogram-link{width:62px!important;height:48px!important}
  .memory-slideshow .memory-slide:nth-of-type(2){background-position:18% 40% !important}
  .memory-slideshow .memory-slide:nth-of-type(7){background-position:28% 40% !important}
 }
+
+/* Page 03: save-the-date CTA and vertically aligned countdown separators */
+.countdown .timer { align-items:flex-start !important; }
+.countdown .timer > b {
+  display:block !important;
+  line-height:1 !important;
+  transform:translateY(17px) !important;
+}
+.countdown-save-date {
+  display:inline-block !important;
+  margin-top:24px !important;
+  padding:13px 22px !important;
+  border:1px solid #d1b77f !important;
+  color:#f5f2e9 !important;
+  text-decoration:none !important;
+  font:500 9px var(--sans) !important;
+  letter-spacing:.2em !important;
+  transition:background .25s ease,color .25s ease !important;
+}
+.countdown-save-date:hover { background:#d1b77f !important; color:#263b33 !important; }
+@media(max-width:700px) {
+  .countdown .timer > b { transform:translateY(11px) !important; }
+  .countdown-save-date { margin-top:22px !important; padding:12px 18px !important; }
+}
