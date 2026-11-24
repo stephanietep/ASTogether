@@ -12,9 +12,13 @@
   $('[data-config="ceremonyDateLabel"]').textContent=fmtDate(c.ceremonyDateTime);
   $('[data-config="receptionDateLabel"]').textContent=fmtDate(c.receptionDateTime);
   const toCal = () => {
-    if (!c.ceremonyDateTime || !c.ceremonyEndDateTime) return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Wedding of Andy & Stephanie')}&dates=${c.date.replaceAll('-','')}/${new Date(new Date(c.date+'T00:00:00+07:00').getTime()+86400000).toISOString().slice(0,10).replaceAll('-','')}&details=${encodeURIComponent('Celebrate the wedding of Andy Surya & Stephanie Vanessa. #ASTogether')}&location=${encodeURIComponent(c.churchName+', '+(c.churchAddress||'Surabaya'))}`;
-    const dates = d => new Date(d).toISOString().replaceAll(/[-:]/g,'').replace(/\.\d{3}/,'');
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent('Wedding of Andy & Stephanie')}&dates=${dates(c.ceremonyDateTime)}/${dates(c.ceremonyEndDateTime)}&details=${encodeURIComponent('With grateful hearts, Andy Surya & Stephanie Vanessa invite you to celebrate their wedding. #ASTogether')}&location=${encodeURIComponent(c.churchName+', '+c.churchAddress)}`;
+    const title = 'Holy Matrimony of Andy & Stephanie';
+    // 10:00–13:00 WIB (UTC+7) on 30 January 2027.
+    const dates = '20270130T030000Z/20270130T060000Z';
+    const location = 'GBI ROCK City Church Surabaya';
+    const maps = 'https://maps.app.goo.gl/usV7tmp2LEyY8NKv5';
+    const details = 'Dress Code: white, gold, emerald green\\n\\nGoogle Maps: ' + maps;
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dates}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
   };
   $('#calendarLink').href=toCal();
   $('#countdownCalendarLink').href=toCal();
