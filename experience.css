@@ -49,3 +49,21 @@
 footer .monogram-link{width:62px!important;height:48px!important}
 .closing-monogram{display:block;width:clamp(76px,16vw,118px);height:auto;max-height:100px;object-fit:contain;margin:0 auto 24px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.16))}
 @media(max-width:700px){.monogram-link{width:48px!important;height:38px!important}.closing-monogram{width:82px;margin-bottom:20px}}
+
+
+/* Fine-tuned framing for the two photos shown in the latest screenshots */
+.memory-slideshow .memory-slide:nth-child(1) {
+  background-position: 20% 40% !important;
+}
+.memory-slideshow .memory-slide:nth-child(6) {
+  background-position: 35% 40% !important;
+}
+
+@media (max-width: 700px) {
+  .memory-slideshow .memory-slide:nth-child(1) {
+    background-position: 20% 40% !important;
+  }
+  .memory-slideshow .memory-slide:nth-child(6) {
+    background-position: 35% 40% !important;
+  }
+}
