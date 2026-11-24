@@ -1,6 +1,6 @@
-/* Couple feature layout */
+/* Couple feature layout: this stylesheet is stored in /assets */
 .couple-feature{max-width:850px;margin:48px auto 0;background:var(--ivory);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:stretch;overflow:hidden}
-.couple-feature-photo{min-height:560px;background:url('assets/couple-main.jpg') center 42%/cover no-repeat}
+.couple-feature-photo{min-height:560px;background:url('couple-main.jpg') center 42%/cover no-repeat}
 .couple-feature-caption{padding:48px 38px;display:flex;flex-direction:column;justify-content:center}
 .couple-feature-caption h2{font:400 clamp(38px,5vw,64px)/.94 var(--serif);letter-spacing:-.035em;margin:12px 0 32px}
 .couple-feature-caption h2 i{color:var(--gold);font-weight:400}
