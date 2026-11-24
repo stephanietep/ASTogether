@@ -81,3 +81,11 @@ footer .monogram-link{width:62px!important;height:48px!important}
 @media(max-width:350px){
   .couple-feature-caption h2.couple-full-names{font-size:18px!important}
 }
+
+/* Restore the previously approved slideshow framing (v3) */
+.memory-slideshow .memory-slide:nth-of-type(2) { background-position:18% 40% !important; }
+.memory-slideshow .memory-slide:nth-of-type(7) { background-position:28% 40% !important; }
+@media(max-width:700px){
+ .memory-slideshow .memory-slide:nth-of-type(2){background-position:18% 40% !important}
+ .memory-slideshow .memory-slide:nth-of-type(7){background-position:28% 40% !important}
+}
