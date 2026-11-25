@@ -17,7 +17,7 @@ window.WEDDING_CONFIG = {
   rsvpDeadline: "10 January 2027",
   appsScriptUrl: "https://script.google.com/macros/s/AKfycbyo7UOKGHviZ7NvGQly_HWcpOZAoVuG-65FRStNCZ4zQNW3t6TrOVuAB04dL5UUYlCW/exec",
   backgroundMusic: "assets/wedding-music.mp3",
-  heroImage: "assets/hero.jpg",
+  heroImage: "assets/cover-2.jpg",
   groomImage: "assets/groom.jpg",
   brideImage: "assets/bride.jpg",
   closingImage: "assets/closing.jpg"
