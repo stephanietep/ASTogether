@@ -16,8 +16,7 @@
     // 10:00–13:00 WIB (UTC+7) on 30 January 2027.
     const dates = '20270130T030000Z/20270130T060000Z';
     const location = 'GBI ROCK City Church Surabaya';
-    const maps = 'https://maps.app.goo.gl/usV7tmp2LEyY8NKv5';
-    const details = 'Dress Code: white, gold, emerald green\\n\\nGoogle Maps: ' + maps;
+    const details = 'Dress Code: white, gold, emerald green';
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dates}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
   };
   $('#calendarLink').href=toCal();
