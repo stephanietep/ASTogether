@@ -1,30 +1,25 @@
 (() => {
   const c = window.WEDDING_CONFIG;
   const $ = (s) => document.querySelector(s);
-  const fmtDate = (iso) => iso ? new Date(iso).toLocaleString('en-US',{dateStyle:'full',timeStyle:'short',timeZone:'Asia/Jakarta'}) : 'Saturday, 30 January 2027 · Time to be confirmed';
+  const ceremonyStart = '2027-01-30T10:00:00+07:00';
+  const ceremonyEnd = '2027-01-30T13:00:00+07:00';
+  const fmtCeremony = () => 'Saturday, 30 January 2027 · 10.00–13.00 WIB';
   document.querySelectorAll('[data-config]').forEach(el => { const v = c[el.dataset.config]; if (v !== undefined && v !== null) el.textContent = v; });
   const setBg = (selector, path) => { const el=$(selector); if(path) { const img=new Image(); img.onload=()=>el.style.backgroundImage=`url("${path}")`; img.src=path; } };
   setBg('.hero-photo',c.heroImage); setBg('.portrait-groom',c.groomImage); setBg('.portrait-bride',c.brideImage); setBg('.closing-photo',c.closingImage);
-  const mapsUrl = address => address ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}` : 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent('GBI ROCK Royal Residence Surabaya');
-  $('#churchMap').href=mapsUrl(c.churchAddress || c.churchName+', Surabaya');
-  $('#receptionMap').href=mapsUrl(c.receptionAddress || c.receptionName+', Surabaya');
-  $('#venueMap').href=mapsUrl(c.churchAddress || c.churchName+', Surabaya');
-  $('[data-config="ceremonyDateLabel"]').textContent=fmtDate(c.ceremonyDateTime);
-  $('[data-config="receptionDateLabel"]').textContent=fmtDate(c.receptionDateTime);
-  const toCal = () => {
-    const title = 'Holy Matrimony of Andy & Stephanie';
-    // 10:00–13:00 WIB (UTC+7) on 30 January 2027.
-    const dates = '20270130T030000Z/20270130T060000Z';
-    const location = 'GBI ROCK City Church Surabaya';
-    const details = 'Dress Code: white, gold, emerald green';
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${dates}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
-  };
-  $('#calendarLink').href=toCal();
-  $('#countdownCalendarLink').href=toCal();
-  const target = c.ceremonyDateTime ? new Date(c.ceremonyDateTime).getTime() : new Date(c.date+'T00:00:00+07:00').getTime();
+  const churchMapsLink = 'https://maps.app.goo.gl/usV7tmp2LEyY8NKv5';
+  $('#churchMap').href = churchMapsLink;
+  $('#venueMap').href = churchMapsLink;
+  const target = new Date(ceremonyStart).getTime();
   const pad = n => String(n).padStart(2,'0');
   function tick(){let d=Math.max(0,target-Date.now()); const days=Math.floor(d/86400000);d%=86400000;const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);const s=Math.floor(d/1000)%60;$('#days').textContent=String(days).padStart(3,'0');$('#hours').textContent=pad(h);$('#minutes').textContent=pad(m);$('#seconds').textContent=pad(s);}
   tick();setInterval(tick,1000);
+  const calendarTitle = 'Holy Matrimony of Andy & Stephanie';
+  const calendarDates = '20270130T030000Z/20270130T060000Z';
+  const calendarLocation = 'GBI ROCK City Church Surabaya';
+  const calendarDescription = 'Dress Code: white, gold, emerald green';
+  const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(calendarTitle)}&dates=${calendarDates}&details=${encodeURIComponent(calendarDescription)}&location=${encodeURIComponent(calendarLocation)}`;
+  $('#countdownCalendarLink').href = calendarUrl;
   const form=$('#rsvpForm'), status=$('#formStatus'), list=$('#wishesList');
   function safeText(tag, text, cls){const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=text;return el;}
   function renderWishes(items){list.replaceChildren();if(!items?.length){list.append(safeText('p','Your warm wishes will appear here.','empty-wishes'));return;}items.slice().reverse().forEach(item=>{if(!item.message) return;const card=document.createElement('article');card.className='wish-card';card.append(safeText('p',item.message,'wish-message'),safeText('span',item.fullName||'A friend','wish-author'));list.append(card);});}
