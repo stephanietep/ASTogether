@@ -1,0 +1,33 @@
+/* ASTogether gallery and closing refinements. Loaded after experience.css. */
+.photo-gallery{background:var(--ivory,#f5f2e9);padding-top:clamp(76px,10vw,130px);padding-bottom:clamp(82px,10vw,136px)}
+.gallery-heading{max-width:760px;margin:0 auto 34px;text-align:center}
+.gallery-heading .script{margin-bottom:8px}
+.gallery-heading h2{margin:0;font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(42px,7vw,72px);font-weight:400;line-height:1.02}
+.gallery-heading h2 em{font-weight:400}
+.gallery-caption{max-width:430px;margin:16px auto 0;color:var(--muted,#77756f);font-size:13px;line-height:1.8}
+.gallery-slideshow{position:relative;width:min(100%,920px);aspect-ratio:3/2;margin:0 auto 18px;overflow:hidden;background:#e8e2d8}
+.gallery-slideshow img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center;opacity:0;transition:opacity 2.2s ease-in-out}
+.gallery-slideshow img.is-active{opacity:1}
+.gallery-masonry{columns:2;column-gap:12px;max-width:920px;margin:0 auto 12px}
+.gallery-item{display:inline-block;width:100%;margin:0 0 12px;break-inside:avoid;overflow:hidden;background:#e8e2d8;vertical-align:top}
+.gallery-item img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;transition:transform .7s ease}
+.gallery-item:hover img{transform:scale(1.015)}
+.gallery-featured{width:100%;max-width:920px;margin:0 auto;overflow:hidden;background:#e8e2d8}
+.gallery-featured img{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+@media(max-width:700px){
+ .photo-gallery{padding:72px 16px 82px}
+ .gallery-heading{margin-bottom:26px}
+ .gallery-slideshow{width:100%;aspect-ratio:3/2;margin-bottom:12px}
+ .gallery-masonry{column-gap:9px;margin-bottom:9px}
+ .gallery-item{margin-bottom:9px}
+ .gallery-featured{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.gallery-slideshow img{transition:none!important}}
+/* Move the closing photograph left slightly to centre the couple in the portrait crop. */
+.closing{position:relative;isolation:isolate}
+.closing-photo{position:absolute!important;inset:0!important;z-index:0!important;background-color:#263b33!important;background-position:58% 48%!important;background-size:cover!important;background-repeat:no-repeat!important}
+.closing-overlay{z-index:1!important;background:rgba(23,39,29,.48)!important}
+.closing-content{z-index:2!important}
+/* Footer monogram removed; closing-page monogram remains. */
+footer .monogram-link{display:none!important}
+footer{justify-content:space-between!important}
