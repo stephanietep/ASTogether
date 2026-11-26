@@ -20,5 +20,5 @@ window.WEDDING_CONFIG = {
   heroImage: "assets/cover-2.jpg",
   groomImage: "assets/groom.jpg",
   brideImage: "assets/bride.jpg",
-  closingImage: "assets/closing.jpg"
+  closingImage: "assets/closing-photo.jpg"
 };

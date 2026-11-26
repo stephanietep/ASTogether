@@ -139,3 +139,42 @@ footer .monogram-link{width:62px!important;height:48px!important}
  .gallery-slideshow img{animation:none;opacity:0}
  .gallery-slideshow img:first-child{opacity:1}
 }
+
+
+/* Gallery update: landscape slideshow tile with four unique frames */
+.gallery-grid .gallery-slideshow.gallery-wide{
+  position:relative;
+  grid-column:span 2;
+  grid-row:span 1;
+  min-height:clamp(190px,32vw,390px);
+  aspect-ratio:16/9;
+}
+.gallery-slideshow img{
+  object-fit:cover;
+  object-position:center 42%;
+  animation-duration:24s;
+}
+.gallery-slideshow img:nth-child(1){animation-delay:0s}
+.gallery-slideshow img:nth-child(2){animation-delay:6s}
+.gallery-slideshow img:nth-child(3){animation-delay:12s}
+.gallery-slideshow img:nth-child(4){animation-delay:18s}
+@keyframes gallery-fade{
+  0%,22%{opacity:1}
+  27%,100%{opacity:0}
+}
+.closing-photo{
+  background-image:url('assets/closing-photo.jpg')!important;
+  background-position:center 48%!important;
+  background-size:cover!important;
+}
+@media(max-width:700px){
+  .gallery-grid .gallery-slideshow.gallery-wide{
+    min-height:0;
+    aspect-ratio:16/9;
+    grid-column:span 2;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .gallery-slideshow img{animation:none;opacity:0}
+  .gallery-slideshow img:first-child{opacity:1}
+}
