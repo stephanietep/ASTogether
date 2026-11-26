@@ -1,4 +1,4 @@
-/* Closing page: separate the message lines vertically so the portrait remains unobstructed. */
+/* Closing page */
 .closing-content{
   top:-30px!important;
 }
@@ -20,12 +20,13 @@
   transform:translateY(25px)!important;
 }
 
-/* Narrow the green footer band and centre it at the bottom of the page. */
+/* Footer: reduce height, retain full width */
 footer{
-  width:92%!important;
-  max-width:1120px!important;
-  margin:0 auto!important;
-  padding:26px clamp(18px,5vw,54px)!important;
+  width:100%!important;
+  max-width:none!important;
+  margin:0!important;
+  padding:12px 6vw!important;
+  min-height:0!important;
 }
 @media(max-width:700px){
   .closing-content{top:-26px!important}
@@ -34,7 +35,8 @@ footer{
   .closing-content > p:not(.script){transform:translateY(20px)!important}
   .closing-content > span{transform:translateY(22px)!important}
   footer{
-    width:92%!important;
-    padding:23px 16px!important;
+    width:100%!important;
+    padding:10px 22px!important;
+    min-height:0!important;
   }
 }
