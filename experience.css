@@ -148,3 +148,52 @@ footer .monogram-link{width:62px!important;height:48px!important}
     font-size: 9px;
   }
 }
+
+/* Refined couple headline and full-size names */
+
+/* THE GROOM & THE BRIDE */
+.couple-feature-heading {
+  max-width: 850px;
+  margin: 36px auto -18px;
+  color: var(--ink, #29352f);
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(48px, 6.4vw, 83px);
+  font-weight: 400;
+  line-height: .92;
+  letter-spacing: -.035em;
+}
+
+/* Couple names: larger while remaining on one line */
+.couple-feature-caption h2.couple-full-names {
+  width: 100% !important;
+  margin: 12px auto 30px !important;
+  font-size: clamp(24px, 3.8vw, 48px) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -.035em !important;
+}
+
+.couple-full-names span {
+  display: block !important;
+  white-space: nowrap !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 700px) {
+  .couple-feature-heading {
+    margin: 28px auto -18px;
+    font-size: 54px;
+  }
+
+  .couple-feature-caption h2.couple-full-names {
+    font-size: clamp(20px, 6.6vw, 28px) !important;
+    line-height: 1.1 !important;
+    margin: 12px auto 25px !important;
+  }
+}
+
+@media (max-width: 350px) {
+  .couple-feature-caption h2.couple-full-names {
+    font-size: 19px !important;
+  }
+}
