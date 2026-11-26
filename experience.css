@@ -338,3 +338,13 @@ section.section-pad:not(.intro) {
     margin-top: 0 !important;
   }
 }
+
+
+/* Holy Matrimony venue address */
+.event-address {
+  max-width: 480px;
+  margin: 8px auto 12px;
+  font-size: 11px;
+  line-height: 1.7;
+  font-weight: 300;
+}
