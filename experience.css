@@ -197,3 +197,63 @@ footer .monogram-link{width:62px!important;height:48px!important}
     font-size: 19px !important;
   }
 }
+
+/* Consistent section spacing */
+:root {
+  --section-top-space: 110px;
+  --section-content-gap: 36px;
+}
+
+/* Keep section opening whitespace consistent */
+section.section-pad:not(.intro) {
+  padding-top: var(--section-top-space) !important;
+}
+
+/* Consistent spacing between section number and main content */
+.couple-feature-heading {
+  margin: var(--section-content-gap) auto -18px !important;
+  color: var(--ink, #29352f) !important;
+  text-align: center !important;
+  font-family: var(--serif) !important;
+  font-size: clamp(48px, 6.4vw, 83px) !important;
+  font-weight: 400 !important;
+  line-height: .92 !important;
+  letter-spacing: -.035em !important;
+  text-transform: none !important;
+}
+
+.countdown-content {
+  margin-top: var(--section-content-gap) !important;
+}
+
+.event-heading {
+  margin-top: var(--section-content-gap) !important;
+}
+
+.rsvp-layout {
+  margin-top: var(--section-content-gap) !important;
+}
+
+.wishes-head {
+  margin-top: var(--section-content-gap) !important;
+}
+
+/* Sections without a section number */
+.gift-inner {
+  margin-top: 0 !important;
+}
+
+.gallery-heading {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 700px) {
+  :root {
+    --section-top-space: 78px;
+    --section-content-gap: 28px;
+  }
+
+  .couple-feature-heading {
+    font-size: 54px !important;
+  }
+}
