@@ -18,7 +18,21 @@
   function loadWishes(){if(!c.appsScriptUrl)return;const cb='astWishes_'+Date.now();window[cb]=(data)=>{if(data&&data.ok)renderWishes(data.wishes||[]);delete window[cb];script.remove();};const script=document.createElement('script');script.src=c.appsScriptUrl+'?action=list&callback='+cb+'&t='+Date.now();script.onerror=()=>{delete window[cb];script.remove();console.warn('Could not refresh wishes');};document.body.append(script);}
   form.addEventListener('submit',async e=>{e.preventDefault();if(!c.appsScriptUrl){status.textContent='RSVP is not connected yet. Please contact the couple directly.';return;}const data=Object.fromEntries(new FormData(form).entries());if(data.attendance==='Not Attending')data.guestCount='0';status.textContent='Sending your response…';const button=form.querySelector('button');button.disabled=true;try{const body=new URLSearchParams({...data,action:'submit'});await fetch(c.appsScriptUrl,{method:'POST',mode:'no-cors',body});status.textContent='Thank you. Your RSVP has been received.';form.reset();$('#guestCount').value='1';setTimeout(loadWishes,1800);}catch(err){status.textContent='Unable to submit right now. Please try again.';}finally{button.disabled=false;}});
   $('#rsvpForm select[name="attendance"]').addEventListener('change',e=>{const sel=$('#guestCount');sel.disabled=e.target.value==='Not Attending';if(sel.disabled)sel.value='1';});
-  $('#copyBank').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(c.bankAccount);$('#copyBank').textContent='COPIED';}catch(e){$('#copyBank').textContent='COPY NOT AVAILABLE';}});
-  loadWishes();if(c.appsScriptUrl)setInterval(loadWishes,30000);
-  const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-})();
+  
+document.querySelectorAll('[data-copy-account]').forEach(button => {
+  button.addEventListener('click', async () => {
+    const account = button.dataset.copyAccount;
+    const originalText = button.textContent;
+
+    try {
+      await navigator.clipboard.writeText(account);
+      button.textContent = 'COPIED!';
+    } catch (error) {
+      button.textContent = 'COPY FAILED';
+    }
+
+    setTimeout(() => {
+      button.textContent = originalText;
+    }, 2000);
+  });
+});
