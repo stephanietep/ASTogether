@@ -1,0 +1,40 @@
+/* Closing page: separate the message lines vertically so the portrait remains unobstructed. */
+.closing-content{
+  top:-30px!important;
+}
+.closing-content > .script{
+  position:relative!important;
+  transform:translateY(-24px)!important;
+}
+.closing-content > h2{
+  position:relative!important;
+  transform:translateY(18px)!important;
+}
+.closing-content > p:not(.script){
+  position:relative!important;
+  transform:translateY(23px)!important;
+}
+.closing-content > span{
+  position:relative!important;
+  display:inline-block!important;
+  transform:translateY(25px)!important;
+}
+
+/* Narrow the green footer band and centre it at the bottom of the page. */
+footer{
+  width:92%!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+  padding:26px clamp(18px,5vw,54px)!important;
+}
+@media(max-width:700px){
+  .closing-content{top:-26px!important}
+  .closing-content > .script{transform:translateY(-22px)!important}
+  .closing-content > h2{transform:translateY(16px)!important}
+  .closing-content > p:not(.script){transform:translateY(20px)!important}
+  .closing-content > span{transform:translateY(22px)!important}
+  footer{
+    width:92%!important;
+    padding:23px 16px!important;
+  }
+}
