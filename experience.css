@@ -315,3 +315,26 @@ section.section-pad:not(.intro) {
     margin-top: 0 !important;
   }
 }
+
+
+/* Fix excessive top spacing from Page 03 onward */
+.countdown-content,
+.event-heading,
+.rsvp-layout,
+.wishes-head,
+.gift-inner,
+.gallery-heading {
+  margin-top: 0 !important;
+}
+
+/* Keep section content aligned consistently on mobile */
+@media (max-width: 700px) {
+  .countdown-content,
+  .event-heading,
+  .rsvp-layout,
+  .wishes-head,
+  .gift-inner,
+  .gallery-heading {
+    margin-top: 0 !important;
+  }
+}
