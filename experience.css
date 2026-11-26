@@ -257,3 +257,41 @@ section.section-pad:not(.intro) {
     font-size: 54px !important;
   }
 }
+
+/* Match headline top spacing to Page 01 */
+section.section-pad:not(.intro) {
+  padding-top: 54px !important;
+}
+
+/* Remove inconsistent individual top margins */
+.couple-feature-heading {
+  margin-top: 0 !important;
+}
+
+.countdown {
+  justify-content: flex-start !important;
+}
+
+.countdown-content,
+.event-heading,
+.rsvp-layout,
+.wishes-head,
+.gift-inner,
+.gallery-heading {
+  margin-top: 54px !important;
+}
+
+@media (max-width: 700px) {
+  section.section-pad:not(.intro) {
+    padding-top: 48px !important;
+  }
+
+  .countdown-content,
+  .event-heading,
+  .rsvp-layout,
+  .wishes-head,
+  .gift-inner,
+  .gallery-heading {
+    margin-top: 48px !important;
+  }
+}
