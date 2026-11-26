@@ -295,3 +295,23 @@ section.section-pad:not(.intro) {
     margin-top: 48px !important;
   }
 }
+
+
+/* Bring couple names closer to the portrait */
+.couple-feature-caption {
+  padding-top: 28px !important;
+}
+
+.couple-feature-caption h2.couple-full-names {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .couple-feature-caption {
+    padding-top: 18px !important;
+  }
+
+  .couple-feature-caption h2.couple-full-names {
+    margin-top: 0 !important;
+  }
+}
