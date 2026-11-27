@@ -30,12 +30,17 @@
   name.className = 'ast-guest-name';
   name.textContent = guestName;
 
+  const disclaimer = document.createElement('p');
+  disclaimer.className = 'ast-guest-note';
+  disclaimer.textContent =
+    'We sincerely apologize for any errors in the spelling of names or titles. Thank you for your understanding.';
+
   const openButton = document.createElement('button');
   openButton.className = 'ast-open-button';
   openButton.type = 'button';
   openButton.innerHTML = 'OPEN INVITATION <span aria-hidden="true">↗</span>';
 
-  content.append(greeting, name, openButton);
+  content.append(greeting, name, disclaimer, openButton);
   cover.append(content);
   hero.appendChild(cover);
 
