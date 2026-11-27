@@ -463,3 +463,28 @@ body.ast-cover-locked {
     margin: -10px auto 20px !important;
   }
 }
+
+
+/* Center the wedding tagline below the date */
+.hero-side {
+  position: static !important;
+  display: block !important;
+  writing-mode: horizontal-tb !important;
+  transform: none !important;
+  width: 100% !important;
+  margin: 13px auto 0 !important;
+  padding: 0 10px !important;
+  color: rgba(255, 255, 255, .85) !important;
+  font: 400 8px 'DM Sans', Arial, sans-serif !important;
+  letter-spacing: .24em !important;
+  text-align: center !important;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, .35) !important;
+}
+
+@media (max-width: 700px) {
+  .hero-side {
+    margin-top: 12px !important;
+    font-size: 8px !important;
+    letter-spacing: .20em !important;
+  }
+}
