@@ -441,3 +441,25 @@ body.ast-cover-locked {
     transition-duration: .3s !important;
   }
 }
+
+
+/* Small disclaimer below personalized guest name */
+.ast-open-content .ast-guest-note {
+  display: block !important;
+  max-width: 360px !important;
+  margin: -10px auto 22px !important;
+  color: rgba(255, 255, 255, .82) !important;
+  font: 400 11px/1.6 'DM Sans', Arial, sans-serif !important;
+  letter-spacing: .015em !important;
+  text-align: center !important;
+  text-shadow: 0 1px 8px #0008 !important;
+}
+
+@media (max-width: 700px) {
+  .ast-open-content .ast-guest-note {
+    max-width: 310px !important;
+    font-size: 10px !important;
+    line-height: 1.5 !important;
+    margin: -10px auto 20px !important;
+  }
+}
