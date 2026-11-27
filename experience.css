@@ -348,3 +348,96 @@ section.section-pad:not(.intro) {
   line-height: 1.7;
   font-weight: 300;
 }
+
+
+/* =========================================
+   ASTogether: Full-screen mobile opening cover
+   ========================================= */
+
+/* Prevent scrolling before the invitation is opened */
+html.ast-cover-locked,
+body.ast-cover-locked {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden !important;
+  overscroll-behavior: none !important;
+}
+
+/* Make the hero a full-screen fixed cover */
+.hero {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 4 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  transform: translateY(0);
+  transition: transform .9s cubic-bezier(.76, 0, .24, 1) !important;
+  will-change: transform;
+}
+
+/* Keep the cover image filling the screen */
+.hero-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-size: cover !important;
+  background-position: center center !important;
+}
+
+/* Slide the entire cover away */
+.hero.ast-cover-exiting {
+  transform: translateY(-105%) !important;
+  pointer-events: none !important;
+}
+
+/* Opening button and guest information */
+.ast-open-screen {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 6 !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: center !important;
+  padding: 24px 24px max(11vh, 82px) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+.ast-open-content {
+  width: min(100%, 520px) !important;
+}
+
+/* Keep navigation visible above the cover */
+.topbar {
+  z-index: 5 !important;
+}
+
+/* Mobile viewport adjustments */
+@media (max-width: 700px) {
+  .hero {
+    height: 100vh !important;
+    height: 100dvh !important;
+    min-height: 0 !important;
+  }
+
+  .hero-photo {
+    background-position: center center !important;
+  }
+
+  .ast-open-screen {
+    padding: 24px 20px max(10vh, 76px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    transition-duration: .3s !important;
+  }
+}
